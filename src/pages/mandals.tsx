@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { EntityCard } from "../components/entity-card";
 import { Loader } from "../components/ui/loader";
 import { getAllEntities } from "../utils/data-utils";
@@ -79,7 +79,7 @@ export function MandalsPage() {
               }}
               description={
                 <>
-                  This is <strong>{mandal.name}</strong>, a mandal in <strong>{mandal.districtName}</strong> district, <strong>{mandal.stateName}</strong>, India.
+                  This is <strong className="text-black">{mandal.name}</strong>, a mandal in <strong className="text-black">{mandal.districtName}</strong> district, <strong className="text-black">{mandal.stateName}</strong>, India.
                 </>
               }
               onClick={() => window.location.href = `/villages?mandal=${mandal.key}`}

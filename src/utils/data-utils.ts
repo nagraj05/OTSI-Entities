@@ -1,7 +1,3 @@
-import data1 from '../data/1.json';
-import data2 from '../data/2.json';
-import data38 from '../data/38.json';
-// Import other data files as needed
 
 export interface Entity {
   StateKey: number;

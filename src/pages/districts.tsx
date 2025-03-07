@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { EntityCard } from "../components/entity-card";
 import { Loader } from "../components/ui/loader";
 import { getAllEntities } from "../utils/data-utils";
@@ -61,7 +61,7 @@ export function DistrictsPage() {
               }}
               description={
                 <>
-                  This is <strong>{district.name}</strong>, a district in <strong>{district.stateName}</strong>, India.
+                  This is <strong className="text-black">{district.name}</strong>, a district in <strong className="text-black">{district.stateName}</strong>, India.
                 </>
               }
               onClick={() => window.location.href = `/mandals?district=${district.key}`}

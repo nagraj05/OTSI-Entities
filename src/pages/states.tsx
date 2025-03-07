@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { EntityCard } from "../components/entity-card";
 import { getUniqueStates } from "../utils/data-utils";
 import { Loader } from "../components/ui/loader";
@@ -37,7 +37,7 @@ export function StatesPage() {
               additionalKeys={{ stateKey: state.key }}
               description={
                 <>
-                  This is <strong>{state.name}</strong>, a state in India.
+                  This is <strong className="text-black">{state.name}</strong>, a state in India.
                 </>
               }
               onClick={() =>

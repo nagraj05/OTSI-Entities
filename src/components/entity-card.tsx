@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import  { ReactNode } from "react";
 
 interface EntityCardProps {
   name: string;
@@ -31,7 +31,6 @@ export function EntityCard({
   if (mandalKey !== undefined) keyParts.push(`M:${mandalKey}`);
   if (villageKey !== undefined) keyParts.push(`V:${villageKey}`);
   
-  const keysDisplay = keyParts.join(' | ');
   
   return (
     <div 
@@ -40,7 +39,7 @@ export function EntityCard({
     >
       <div className="flex justify-between items-center mb-2">
         <h3 className="text-lg font-medium">{name}</h3>
-        <span className="text-xs text-muted-foreground">
+        <span className="text-xs text-black">
           {displayKey} 
         </span>
       </div>

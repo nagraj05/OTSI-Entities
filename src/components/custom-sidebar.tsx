@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
-import { MapPinIcon, BuildingIcon, HomeIcon, LandmarkIcon, PanelLeftIcon } from "lucide-react";
+import { MapPinIcon, BuildingIcon, HomeIcon, LandmarkIcon } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 
 type SidebarProps = {
@@ -11,16 +11,10 @@ type SidebarProps = {
 };
 
 export function CustomSidebar({ className, isOpen, setIsOpen }: SidebarProps) {
-  const [collapsed, setCollapsed] = React.useState(false);
+  const [collapsed] = React.useState(false);
   const isMobile = useIsMobile();
 
-  const toggleSidebar = () => {
-    if (isMobile) {
-      setIsOpen(!isOpen);
-    } else {
-      setCollapsed(!collapsed);
-    }
-  };
+
 
   const sidebarWidth = collapsed ? "w-16" : "w-64";
   const sidebarClass = isMobile

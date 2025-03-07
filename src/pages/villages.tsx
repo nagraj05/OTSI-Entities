@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { EntityCard } from "../components/entity-card";
 import { Loader } from "../components/ui/loader";
 import { getAllEntities } from "../utils/data-utils";
