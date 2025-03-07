@@ -36,7 +36,7 @@ export function StatesPage() {
               entityKey={state.key}
               description={
                 <>
-                  <strong className="text-black">{state.name}</strong>, a state in India. The code is{" "}
+                  <strong className="text-black">{state.name}</strong>, a state in India. The statecode is{" "}
                   <span className="font-semibold text-black">{state.key}</span>.
                 </>
               }

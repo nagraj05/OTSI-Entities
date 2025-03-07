@@ -83,7 +83,7 @@ export function VillagesPage() {
               description={
                 <>
                   <strong className="text-black">{village.name}</strong>, a village in <strong className="text-black">{village.mandalName}</strong> mandal, <strong className="text-black">{village.districtName}</strong> district, <strong className="text-black">{village.stateName}</strong>, India. 
-                  The code is <span className="font-semibold text-black">{village.key}</span>.
+                  The village code is <span className="font-semibold text-black">{village.key}</span>.
                 </>
               }
             />

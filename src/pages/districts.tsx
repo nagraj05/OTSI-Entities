@@ -58,7 +58,7 @@ export function DistrictsPage() {
               description={
                 <>
                   <strong className="text-black">{district.name}</strong>, a district in <strong className="text-black">{district.stateName}</strong>, India. 
-                  The code is <span className="font-semibold text-black">{district.key}</span>.
+                  The district code is <span className="font-semibold text-black">{district.key}</span>.
                 </>
               }
             />

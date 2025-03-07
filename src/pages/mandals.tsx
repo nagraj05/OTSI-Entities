@@ -75,7 +75,7 @@ export function MandalsPage() {
               description={
                 <>
                   <strong className="text-black">{mandal.name}</strong>, a mandal in <strong className="text-black">{mandal.districtName}</strong> district, <strong className="text-black">{mandal.stateName}</strong>, India. 
-                  The code is <span className="font-semibold text-black">{mandal.key}</span>.
+                  The mandal code is <span className="font-semibold text-black">{mandal.key}</span>.
                 </>
               }
             />
