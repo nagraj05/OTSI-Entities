@@ -1,30 +1,28 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { CustomSidebar } from "./custom-sidebar";
-import { Button } from "./ui/button";
-import { PanelLeftIcon } from "lucide-react";
-import React from "react";
+import { Header } from "./header";
+import { useIsMobile } from "../hooks/use-mobile";
 
 export function Layout() {
-  const [sidebarOpen, setSidebarOpen] = React.useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const isMobile = useIsMobile();
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden bg-background">
+      {/* Sidebar */}
       <CustomSidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
-      <div className="flex-1 flex flex-col">
-        <header className="bg-primary text-primary-foreground h-14 flex items-center px-4 lg:px-6">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-primary-foreground mr-4"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-          >
-            <PanelLeftIcon className="h-5 w-5" />
-            <span className="sr-only">Toggle Sidebar</span>
-          </Button>
-          <h1 className="text-xl font-semibold">OTSI Entities</h1>
-        </header>
-        <main className="flex-1 p-6">
-          <Outlet />
+      
+      {/* Main Content */}
+      <div className="flex flex-col flex-1 overflow-hidden">
+        {/* Header */}
+        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        
+        {/* Scrollable Content Area */}
+        <main className="flex-1 overflow-y-auto p-6">
+          <div className={isMobile ? "pt-2" : ""}>
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>

@@ -13,18 +13,13 @@ interface EntityItemProps {
   };
 }
 
-export function EntityItem({ 
-  name, 
-  description, 
-}: EntityItemProps) {
+export function EntityItem({ name, description }: EntityItemProps) {
   return (
-    <div 
-      className="border-b py-3 px-4 hover:bg-gray-50 transition-colors cursor-pointer"
-    >
+    <div className="py-4 px-5 hover:bg-gray-50 transition-colors">
       <div className="flex justify-between items-center">
-        <h3 className="text-lg font-medium">{name}</h3>
+        <h3 className="text-lg font-medium text-gray-900">{name}</h3>
       </div>
-      <p className="text-sm text-gray-600 mt-1">{description}</p>
+      <p className="text-sm text-gray-600 mt-2">{description}</p>
     </div>
   );
-} 
+}

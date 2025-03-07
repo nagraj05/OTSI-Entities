@@ -14,14 +14,12 @@ export function CustomSidebar({ className, isOpen, setIsOpen }: SidebarProps) {
   const [collapsed] = React.useState(false);
   const isMobile = useIsMobile();
 
-
-
   const sidebarWidth = collapsed ? "w-16" : "w-64";
   const sidebarClass = isMobile
     ? `fixed inset-y-0 left-0 z-50 transform ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-200 ease-in-out`
-    : `relative ${sidebarWidth} transition-width duration-200 ease-in-out ${
+    : `sticky top-0 h-screen ${sidebarWidth} transition-width duration-200 ease-in-out ${
         !isOpen ? "hidden" : ""
       }`;
 
@@ -61,7 +59,7 @@ export function CustomSidebar({ className, isOpen, setIsOpen }: SidebarProps) {
       {/* Sidebar */}
       <div
         className={cn(
-          "bg-sidebar text-sidebar-foreground border-r border-sidebar-border h-screen",
+          "bg-sidebar text-sidebar-foreground border-r border-sidebar-border overflow-y-auto",
           sidebarClass,
           className
         )}

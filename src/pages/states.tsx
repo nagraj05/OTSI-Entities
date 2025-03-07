@@ -28,7 +28,7 @@ export function StatesPage() {
       {loading ? (
         <Loader className="py-12" />
       ) : (
-        <div className="border rounded-md divide-y">
+        <div className="border rounded-md divide-y bg-white shadow-sm">
           {states.map((state) => (
             <EntityItem
               key={state.key}
@@ -36,7 +36,8 @@ export function StatesPage() {
               entityKey={state.key}
               description={
                 <>
-                  <strong className="text-black">{state.name}</strong>, a state in India. The statecode is{" "}
+                  <strong className="text-black">{state.name}</strong>, a state
+                  in India. The statecode is{" "}
                   <span className="font-semibold text-black">{state.key}</span>.
                 </>
               }
