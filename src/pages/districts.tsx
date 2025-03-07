@@ -1,5 +1,5 @@
-import  { useEffect, useState } from "react";
-import { EntityCard } from "../components/entity-card";
+import { useEffect, useState } from "react";
+import { EntityItem } from "../components/entity-item";
 import { Loader } from "../components/ui/loader";
 import { getAllEntities } from "../utils/data-utils";
 
@@ -49,22 +49,18 @@ export function DistrictsPage() {
       {loading ? (
         <Loader className="py-12" />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="border rounded-md divide-y">
           {districts.map((district) => (
-            <EntityCard
+            <EntityItem
               key={district.key}
               name={district.name}
               entityKey={district.key}
-              additionalKeys={{ 
-                stateKey: district.stateKey,
-                districtKey: district.key
-              }}
               description={
                 <>
-                  This is <strong className="text-black">{district.name}</strong>, a district in <strong className="text-black">{district.stateName}</strong>, India.
+                  <strong className="text-black">{district.name}</strong>, a district in <strong className="text-black">{district.stateName}</strong>, India. 
+                  The code is <span className="font-semibold text-black">{district.key}</span>.
                 </>
               }
-              onClick={() => window.location.href = `/mandals?district=${district.key}`}
             />
           ))}
         </div>

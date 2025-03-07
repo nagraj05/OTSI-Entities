@@ -1,5 +1,5 @@
-import  { useEffect, useState } from "react";
-import { EntityCard } from "../components/entity-card";
+import { useEffect, useState } from "react";
+import { EntityItem } from "../components/entity-item";
 import { Loader } from "../components/ui/loader";
 import { getAllEntities } from "../utils/data-utils";
 
@@ -74,24 +74,18 @@ export function VillagesPage() {
       {loading ? (
         <Loader className="py-12" />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="border rounded-md divide-y">
           {villages.map((village) => (
-            <EntityCard
+            <EntityItem
               key={village.key}
               name={village.name}
               entityKey={village.key}
-              additionalKeys={{ 
-                stateKey: village.stateKey,
-                districtKey: village.districtKey,
-                mandalKey: village.mandalKey,
-                villageKey: village.key
-              }}
               description={
                 <>
-                  This is <strong>{village.name}</strong>, a village in <strong>{village.mandalName}</strong> mandal, <strong>{village.districtName}</strong> district, <strong>{village.stateName}</strong>, India.
+                  <strong className="text-black">{village.name}</strong>, a village in <strong className="text-black">{village.mandalName}</strong> mandal, <strong className="text-black">{village.districtName}</strong> district, <strong className="text-black">{village.stateName}</strong>, India. 
+                  The code is <span className="font-semibold text-black">{village.key}</span>.
                 </>
               }
-              onClick={() => {}}
             />
           ))}
         </div>

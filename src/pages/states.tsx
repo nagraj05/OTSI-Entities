@@ -1,5 +1,5 @@
-import  { useEffect, useState } from "react";
-import { EntityCard } from "../components/entity-card";
+import { useEffect, useState } from "react";
+import { EntityItem } from "../components/entity-item";
 import { getUniqueStates } from "../utils/data-utils";
 import { Loader } from "../components/ui/loader";
 
@@ -28,20 +28,17 @@ export function StatesPage() {
       {loading ? (
         <Loader className="py-12" />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="border rounded-md divide-y">
           {states.map((state) => (
-            <EntityCard
+            <EntityItem
               key={state.key}
               name={state.name}
               entityKey={state.key}
-              additionalKeys={{ stateKey: state.key }}
               description={
                 <>
-                  This is <strong className="text-black">{state.name}</strong>, a state in India.
+                  <strong className="text-black">{state.name}</strong>, a state in India. The code is{" "}
+                  <span className="font-semibold text-black">{state.key}</span>.
                 </>
-              }
-              onClick={() =>
-                (window.location.href = `/districts?state=${state.key}`)
               }
             />
           ))}
