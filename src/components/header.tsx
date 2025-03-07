@@ -7,7 +7,6 @@ interface HeaderProps {
 }
 
 export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
-  const isMobile = useIsMobile();
 
   return (
     <header className="sticky top-0 z-10 bg-white border-b border-border shadow-sm">
